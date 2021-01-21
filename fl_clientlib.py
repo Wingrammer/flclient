@@ -55,7 +55,7 @@ def load(image_path, verbose=-1):
         # load the image and extract the class labels
         #im_gray = cv2.imread(imgpath, cv2.IMREAD_GRAYSCALE)
         #image = np.array(im_gray)
-        label = np.float32(imgpath.split(os.path.sep)[-1])
+        label = np.float32(imgpath.split(os.path.sep)[-2])
         if(i==0):
             dataframe = pd.DataFrame({"Image": imgpath, "Covid": label, "Normal": abs(label-1)}, index=[i])
         else:
