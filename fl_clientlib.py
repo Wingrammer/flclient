@@ -72,7 +72,7 @@ def load(image_path, verbose=-1):
     print(f"The file dataset.csv has been created, use {image_path}/dataframe.csv the next time to save your time")
     return dataframe
 
-def get_train_generator(df, image_dir, x_col, y_cols, shuffle=True, batch_size=38, seed=1, target_w = 320, target_h = 320):
+def get_train_generator(df, image_dir, x_col, y_cols, shuffle=True, batch_size=8, seed=1, target_w = 320, target_h = 320):
     """
     Return generator for training set, normalizing using batch
     statistics.
@@ -112,7 +112,7 @@ def get_train_generator(df, image_dir, x_col, y_cols, shuffle=True, batch_size=3
     
     return generator
 
-def get_test_and_valid_generator(valid_df, test_df, train_df, image_dir, x_col, y_cols, sample_size=100, batch_size=32, seed=1, target_w = 320, target_h = 320):
+def get_test_and_valid_generator(valid_df, test_df, train_df, image_dir, x_col, y_cols, sample_size=100, batch_size=8, seed=1, target_w = 320, target_h = 320):
     """
     Return generator for validation set and test test set using 
     normalization statistics from training set.
