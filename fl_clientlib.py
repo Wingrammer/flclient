@@ -16,11 +16,11 @@ from imutils import paths
 import msgpack
 import msgpack_numpy as m
 
-def json_serialize(self, weights):
+def json_serialize(weights):
     serialized_weights = lambda a: [i.tolist() for i in a]
     return serialized_weights(weights)
 
-def json_desrialize(self, weights):
+def json_desrialize(weights):
     deserialized_weights = lambda a: [np.array(i) for i in a]
     return deserialized_weights(weights)
 
