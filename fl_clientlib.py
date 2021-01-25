@@ -16,6 +16,13 @@ from imutils import paths
 import msgpack
 import msgpack_numpy as m
 
+def json_serialize(self, weights):
+    serialized_weights = lambda a: [i.tolist() for i in a]
+    return serialized_weights(weights)
+
+def json_desrialize(self, weights):
+    deserialized_weights = lambda a: [np.array(i) for i in a]
+    return deserialized_weights(weights)
 
 def compute_class_freqs(labels):
     """
